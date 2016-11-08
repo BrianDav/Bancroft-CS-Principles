@@ -1,0 +1,22 @@
+//Brian Davenport
+//Moving Square
+//November 8, 2016
+
+int x = 0;
+int y = 0;
+int speed = 1;
+
+void setup()
+{
+  size(1000,1000);
+  println("I'm starting up");
+}
+
+void draw()
+{
+  background(#72C4C6);
+  fill(#0A0A0A);
+  rect(x, y,50,50);
+  x = x + speed;
+  y = x * x;
+}
