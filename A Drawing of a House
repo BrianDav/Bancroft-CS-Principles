@@ -1,0 +1,23 @@
+//My drawing of a house
+//Brian Davenport
+//November 7, 2016
+
+size(600,600);
+background(#92CCFA);
+fill(#539814);
+rect(0,400,600,200);
+arc(300,400,600,50,PI,TWO_PI);
+fill(255);
+ellipseMode(CENTER);
+ellipse(150,100,200,80);
+fill(#D8C427);
+rect(200,300,200,175);
+fill(#64271C);
+rect(350,180,20,50);
+rect(285,425,30,50);
+fill(#A7412F);
+quad(180,300,200,200,400,200,420,300);
+fill(#C2EEF0);
+rect(240,360,20,20);
+rect(340,360,20,20);
+fill(#B28209);
