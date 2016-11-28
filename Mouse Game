@@ -1,0 +1,98 @@
+float cx = 0;
+float cy = 0;
+
+void setup()
+{
+  size(1000,1000);
+}
+
+void draw()
+{
+  background(#403620);
+  Rat auto1 = new Rat(mouseX - 100,mouseY - 110);
+  Cat cat1 = new Cat(cx+500,cy+500);
+  cy = cy + 0;
+    
+}
+
+_____________________________________________________________________________________________________________________________
+//This is the rat that the player will control
+
+class Rat
+{
+  int myX = 0;
+  int myY = 0;
+  
+  public Rat(int x, int y)
+  {
+    myX = x;
+    myY = y;
+    
+    strokeWeight(0);
+    
+    fill(#ECB3F0);//pink color
+    triangle(x+65,y+100,x+20,y+120,x+65,y+110);//FIX THIS SHAPE
+    
+    fill(#CBC7C7); //Grey color
+    ellipseMode(CENTER);
+    rect(x+80,y+110,5,25);//back left leg
+    rect(x+130,y+110,5,25);//front left leg
+    ellipse(x+100,y+110,80,40);//body
+    
+    ellipse(x+145,y+70,20,20);//left ear
+    fill(#ECB3F0);//pink color
+    ellipse(x+145,y+70,7,7);//left inner ear
+    
+    fill(#CBC7C7); //Grey color
+    ellipse(x+135,y+85,35,35);//head
+    ellipse(x+120,y+70,20,20);//right ear
+    rect(x+70,y+120,5,25);//back right leg
+    rect(x+120,y+120,5,25);//front right leg
+    
+    fill(#ECB3F0);//pink color
+    ellipse(x+120,y+70,7,7);//right inner ear
+    
+    fill(0);//black color
+    ellipse(x+135,y+80,5,10);//right eye
+    ellipse(x+145,y+80,5,10);//left eye
+    
+    fill(255);//white color
+    ellipse(x+136,y+80,3,5);//right eye highlight
+    ellipse(x+146,y+80,3,5);//left eye highlight
+    
+    line(x+140,y+90,x+130,y+85);//top right whisker
+    line(x+140,y+92,x+130,y+91);//bottom right whisker
+    line(x+142,y+90,x+150,y+85);//top left whisker
+    line(x+142,y+92,x+150,y+91);//bottom left whisker
+    
+    fill(#ECB3F0);//pink color
+    triangle(x+136,y+88,x+141,y+93,x+146,y+88);//nose
+  }
+}
+_________________________________________________________________________________________________
+//This is the class for the cats that get in the way of the player
+
+class Cat
+{
+  float myX = 0;
+  float myY = 0;
+  
+  public Cat(float x, float y)
+  {
+    myX = x;
+    myY = y;
+    
+    strokeWeight(0);
+    
+    fill(#ED7E07);//orange color
+    ellipseMode(CENTER);
+    ellipse(x+100,y+100,80,80);//body
+    ellipse(x+73,y+123,20,10);//top of left foot
+    ellipse(x+127,y+123,20,10);//top of left foot
+    quad(x+63,y+123, x+83,y+123, x+93,y+143, x+53,y+143);//bottom of left foot
+    quad(x+117,y+123, x+137,y+123, x+147,y+143, x+107,y+143);//bottom of right foot
+    ellipse(x+100,y+80,60,60);//head
+    //triangle(90, ,,,);//left ear
+    //triangle();//right ear
+  }
+}
